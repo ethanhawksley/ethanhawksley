@@ -1,0 +1,44 @@
+name: Update README with Latest Blog Posts
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Fetch feed and update README
+        run: |
+          python3 -c "
+          import urllib.request, json, re
+
+          req = urllib.request.Request('https://hawksley.dev/feed.json', headers={'User-Agent': 'Mozilla/5.0'})
+          with urllib.request.urlopen(req) as response:
+              feed = json.loads(response.read().decode('utf-8'))
+
+          lines = []
+          for post in feed.get('items', [])[:2]:
+              title, url, summary = post['title'], post['url'], post['summary']
+              lines.append(f'- **[{title}]({url})**<br/>{summary}')
+
+          replacement = '\n' + '\n\n'.join(lines) + '\n'
+
+          with open('README.md', 'r', encoding='utf-8') as f:
+              content = f.read()
+
+          pattern = r'(<!-- BLOG_START -->).*?(<!-- BLOG_END -->)'
+          new_content = re.sub(pattern, r'\1' + replacement + r'\2', content, flags=re.DOTALL)
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_content)
+          "
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git diff --staged --quiet || (git commit -m "docs(readme): auto-update latest blog posts" && git push)
