@@ -11,4 +11,7 @@ My recent projects include:
 
 My latest blog posts are:
 <!-- BLOG_START -->
+- **[Mitigating Ongoing Registry Supply Chain Attacks](https://hawksley.dev/blog/supply-chain-attacks/)**<br/>They are only becoming more frequent and more damaging.
+
+- **[The Need for Post-Quantum Cryptography](https://hawksley.dev/blog/need-for-post-quantum-cryptography/)**<br/>Quantum computers are becoming increasingly realistic. We need to be ready.
 <!-- BLOG_END -->
