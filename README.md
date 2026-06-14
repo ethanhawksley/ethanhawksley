@@ -19,3 +19,4 @@ You can find me at [hawksley.dev](https://hawksley.dev)
 
 - **[The Need for Post-Quantum Cryptography](https://hawksley.dev/blog/need-for-post-quantum-cryptography/)**<br/>Quantum computers are becoming increasingly realistic. We need to be ready.
 <!-- BLOG_END -->
+[View all posts](https://hawksley.dev/blog/)
