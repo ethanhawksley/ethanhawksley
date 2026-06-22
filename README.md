@@ -15,8 +15,8 @@ You can find me at [hawksley.dev](https://hawksley.dev)
 
 ## Recent Blog Posts
 <!-- BLOG_START -->
-- **[Mitigating Ongoing Registry Supply Chain Attacks](https://hawksley.dev/blog/supply-chain-attacks/)**<br/>They are only becoming more frequent and more damaging.
+- **[JSON-LD Explained for Personal Websites](https://hawksley.dev/blog/json-ld-explained-for-personal-websites/)**<br/>Everything you need to know about JSON-LD and how to implement it.
 
-- **[The Need for Post-Quantum Cryptography](https://hawksley.dev/blog/need-for-post-quantum-cryptography/)**<br/>Quantum computers are becoming increasingly realistic. We need to be ready.
+- **[Mitigating Ongoing Registry Supply Chain Attacks](https://hawksley.dev/blog/supply-chain-attacks/)**<br/>They are only becoming more frequent and more damaging.
 <!-- BLOG_END -->
 [View all posts](https://hawksley.dev/blog/)
