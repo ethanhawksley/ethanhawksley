@@ -5,13 +5,13 @@ You can find me at [hawksley.dev](https://hawksley.dev)
 
 ## Recent Projects
 - **Nintendrust** - Rust/Wasm NES emulator that runs in the browser\
-  [Live Demo](https://hawksley.dev/nintendrust/), [Source](https://github.com/ethan-hawksley/nintendrust)
+  [Live Demo](https://hawksley.dev/nintendrust/), [Source](https://github.com/ethanhawksley/nintendrust)
 - **MineDuo** - Real-time co-op Minesweeper in the browser, no server required\
-  [Live Demo](https://hawksley.dev/mineduo/), [Source](https://github.com/ethan-hawksley/mineduo)
+  [Live Demo](https://hawksley.dev/mineduo/), [Source](https://github.com/ethanhawksley/mineduo)
 - **yt-play** - Rust CLI utility for downloading and listening to playlists offline\
-  [crates.io](https://crates.io/crates/yt-play), [Source](https://github.com/ethan-hawksley/yt-play)
+  [crates.io](https://crates.io/crates/yt-play), [Source](https://github.com/ethanhawksley/yt-play)
 - **CYMS Interpreter** - Web interpreter for CYMS, an assembly-like language\
-  [Live Demo](https://hawksley.dev/cyms-interpreter/), [Source](https://github.com/ethan-hawksley/cyms-interpreter)
+  [Live Demo](https://hawksley.dev/cyms-interpreter/), [Source](https://github.com/ethanhawksley/cyms-interpreter)
 
 ## Recent Blog Posts
 <!-- BLOG_START -->
