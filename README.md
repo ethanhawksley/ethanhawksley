@@ -21,4 +21,4 @@ You can find me at [hawksley.dev](https://hawksley.dev)
 <!-- BLOG_END -->
 [View all posts](https://hawksley.dev/blog/)
 
-<!-- WEEK: 1 -->
+<!-- WEEK: 27 -->
