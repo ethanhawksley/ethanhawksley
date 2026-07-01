@@ -1,5 +1,7 @@
 name: Update README with Latest Blog Posts
 on:
+  repository_dispatch:
+    types: [site_deployed]
   schedule:
     - cron: '0 1 * * *'
   workflow_dispatch:
