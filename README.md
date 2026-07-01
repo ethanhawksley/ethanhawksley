@@ -20,3 +20,5 @@ You can find me at [hawksley.dev](https://hawksley.dev)
 - **[Mitigating Ongoing Registry Supply Chain Attacks](https://hawksley.dev/blog/supply-chain-attacks/)**<br/>They are only becoming more frequent and more damaging.
 <!-- BLOG_END -->
 [View all posts](https://hawksley.dev/blog/)
+
+<!-- WEEK: 1 -->
