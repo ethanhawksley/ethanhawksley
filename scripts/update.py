@@ -1,25 +1,52 @@
-import urllib.request, json, re, datetime
+import datetime
+import json
+import re
+import urllib.request
 
-req = urllib.request.Request('https://hawksley.dev/feed.json', headers={'User-Agent': 'Mozilla/5.0'})
-with urllib.request.urlopen(req) as response:
-  feed = json.loads(response.read().decode('utf-8'))
+feed_url = 'https://hawksley.dev/feed.json'
+request = urllib.request.Request(feed_url, headers={'User-Agent': 'Mozilla/5.0'})
 
-lines = []
-for post in feed.get('items', [])[:2]:
-  title, url, summary = post['title'], post['url'], post['summary']
-  lines.append(f'- **[{title}]({url})**<br/>{summary}')
+with urllib.request.urlopen(request) as response:
+    response_data = response.read().decode('utf-8')
+    feed = json.loads(response_data)
 
-replacement = '\n' + '\n\n'.join(lines) + '\n'
+new_blog_lines = []
+all_posts = feed.get('items', [])
+top_two_posts = all_posts[:2]
 
-with open('README.md', 'r', encoding='utf-8') as f:
-  content = f.read()
+for post in top_two_posts:
+    title = post['title']
+    url = post['url']
+    summary = post['summary']
 
-pattern = r'(<!-- BLOG_START -->).*?(<!-- BLOG_END -->)'
-content = re.sub(pattern, r'\1' + replacement + r'\2', content, flags=re.DOTALL)
+    formatted_post = f"- **[{title}]({url})**<br/>{summary}"
+    new_blog_lines.append(formatted_post)
 
-week_num = datetime.date.today().isocalendar()[1]
-content = re.sub(r'(<!-- WEEK: )\d+( -->)', r'\g<1>' + str(week_num) + r'\g<2>', content)
+post_count = len(all_posts)
+view_all_link = f"[View all posts ({post_count})](https://hawksley.dev/blog/)"
 
+posts_text = '\n\n'.join(new_blog_lines)
+replacement_text = '\n' + posts_text + '\n\n' + view_all_link + '\n'
 
-with open('README.md', 'w', encoding='utf-8') as f:
-  f.write(content)
+with open('README.md', 'r', encoding='utf-8') as file:
+    readme_content = file.read()
+
+blog_pattern = r'(<!-- BLOG_START -->).*?(<!-- BLOG_END -->)'
+readme_content = re.sub(
+    blog_pattern,
+    r'\1' + replacement_text + r'\2',
+    readme_content,
+    flags=re.DOTALL
+)
+
+current_week = datetime.date.today().isocalendar()[1]
+
+week_pattern = r'(<!-- WEEK: )\d+( -->)'
+readme_content = re.sub(
+    week_pattern,
+    r'\g<1>' + str(current_week) + r'\g<2>',
+    readme_content
+)
+
+with open('README.md', 'w', encoding='utf-8') as file:
+    file.write(readme_content)
