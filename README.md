@@ -25,4 +25,4 @@ You can find me at [hawksley.dev](https://hawksley.dev)
 [View all posts (9)](https://hawksley.dev/blog/)
 <!-- BLOG_END -->
 
-<!-- WEEK: 38 -->
+<!-- WEEK: 39 -->
